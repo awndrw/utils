@@ -1,7 +1,7 @@
 {
     "name": "@wiggindev/utils",
     "description": "Various utilities that I use in my projects",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "author": {
         "name": "Andrew Wiggin",
         "email": "andrew@wiggin.dev",
@@ -22,9 +22,8 @@
     "unpkg": "dist/index.umd.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "prebuild": "rimraf dist",
-        "build": "microbundle",
-        "dev": "microbundle watch",
+        "build": "rimraf dist && microbundle",
+        "dev": "rimraf dist && microbundle watch",
         "postinstall": "husky install",
         "prepack": "pinst --disable",
         "postpack": "pinst --enable",

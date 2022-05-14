@@ -1,2 +1,4 @@
 export { events } from './events';
-export type { LiteralUnion } from './LiteralUnion';
+export type { LiteralUnion, Callback } from './types';
+export { throttle } from './throttle';
+export { noop } from './noop';
