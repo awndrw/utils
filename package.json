@@ -7,7 +7,7 @@
         "email": "andrew@wiggin.dev",
         "url": "https://wiggin.dev"
     },
-    "repository": "git://github.com/wiggindev/utils.git",
+    "repository": "git://github.com/wiggin",
     "type": "module",
     "source": "src/index.ts",
     "exports": {
