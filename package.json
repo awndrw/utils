@@ -1,7 +1,7 @@
 {
     "name": "@wiggindev/utils",
     "description": "Various utilities that I use in my projects",
-    "version": "0.1.0",
+    "version": "0.1.4",
     "author": {
         "name": "Andrew Wiggin",
         "email": "andrew@wiggin.dev",
@@ -27,9 +27,6 @@
         "lint": "tsc --noEmit && yarn eslint",
         "format": "yarn eslint --fix && yarn prettier --write ."
     },
-    "peerDependencies": {
-        "react": ">= 18"
-    },
     "devDependencies": {
         "@types/react": "^18.0.9",
         "@typescript-eslint/eslint-plugin": "^5.23.0",
@@ -37,7 +34,6 @@
         "eslint": "^8.15.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-prettier": "^4.0.0",
-        "eslint-plugin-react": "^7.29.4",
         "husky": "^8.0.1",
         "lint-staged": "^12.4.1",
         "microbundle": "^0.15.0",

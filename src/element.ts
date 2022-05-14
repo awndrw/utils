@@ -1,33 +1,27 @@
 import { EventListener, EventName, DomEventListener } from './events';
 
-type ElementEventName = EventName<HTMLElementEventMap>;
-type ElementEventListener<E extends ElementEventName> = EventListener<
-    HTMLElementEventMap,
-    E
->;
-
-export const on = <E extends ElementEventName>(
+export const on = <E extends EventName<HTMLElementEventMap>>(
     element: HTMLElement,
     event: E,
-    listener: ElementEventListener<E>
+    listener: EventListener<HTMLElementEventMap, E>
 ) => {
     element.addEventListener(event, listener as DomEventListener);
 };
 
-export const off = <E extends ElementEventName>(
+export const off = <E extends EventName<HTMLElementEventMap>>(
     element: HTMLElement,
     event: E,
-    listener: ElementEventListener<E>
+    listener: EventListener<HTMLElementEventMap, E>
 ) => {
     element.removeEventListener(event, listener as DomEventListener);
 };
 
-export const once = <E extends ElementEventName>(
+export const once = <E extends EventName<HTMLElementEventMap>>(
     element: HTMLElement,
     event: E,
-    listener: ElementEventListener<E>
+    listener: EventListener<HTMLElementEventMap, E>
 ) => {
-    const wrappedListener: ElementEventListener<E> = e => {
+    const wrappedListener: EventListener<HTMLElementEventMap, E> = e => {
         listener(e);
         off(element, event, wrappedListener);
     };

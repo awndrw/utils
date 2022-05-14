@@ -6,3 +6,4 @@ export declare const events: {
     window: typeof windowEvents;
     element: typeof elementEvents;
 };
+export type { EventListener, EventName } from './events';

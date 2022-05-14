@@ -1,30 +1,24 @@
 import { EventListener, EventName, DomEventListener } from './events';
 
-type WindowEventName = EventName<WindowEventMap>;
-type WindowEventListener<E extends WindowEventName> = EventListener<
-    WindowEventMap,
-    E
->;
-
-export const on = <E extends WindowEventName>(
+export const on = <E extends EventName<WindowEventMap>>(
     event: E,
-    listener: WindowEventListener<E>
+    listener: EventListener<WindowEventMap, E>
 ) => {
     window.addEventListener(event, listener as DomEventListener);
 };
 
-export const off = <E extends WindowEventName>(
+export const off = <E extends EventName<WindowEventMap>>(
     event: E,
-    listener: WindowEventListener<E>
+    listener: EventListener<WindowEventMap, E>
 ) => {
     window.removeEventListener(event, listener as DomEventListener);
 };
 
-export const once = <E extends WindowEventName>(
+export const once = <E extends EventName<WindowEventMap>>(
     event: E,
-    listener: WindowEventListener<E>
+    listener: EventListener<WindowEventMap, E>
 ) => {
-    const wrappedListener: WindowEventListener<E> = e => {
+    const wrappedListener: EventListener<WindowEventMap, E> = e => {
         listener(e);
         off(event, wrappedListener);
     };

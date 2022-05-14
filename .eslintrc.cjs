@@ -6,8 +6,8 @@ module.exports = {
             jsx: true,
         },
     },
-    plugins: ['@typescript-eslint', 'react', 'prettier'],
-    extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier'],
+    plugins: ['@typescript-eslint', 'prettier'],
+    extends: ['eslint:recommended', 'prettier'],
     rules: {
         'prefer-const': 'error',
         'no-unused-vars': 'off',
@@ -17,9 +17,6 @@ module.exports = {
             { ignoreRestSiblings: true },
         ],
         '@typescript-eslint/no-explicit-any': 'error',
-        'react/jsx-uses-react': 'error',
-        'react/jsx-uses-vars': 'error',
-        '@next/next/no-html-link-for-pages': 'off',
         'prettier/prettier': 'error',
     },
     overrides: [
